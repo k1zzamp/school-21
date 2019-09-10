@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 21:22:10 by stross            #+#    #+#             */
-/*   Updated: 2019/09/09 21:23:12 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/10 21:39:34 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int					ft_isspace(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 void				*ft_memalloc(size_t size);
+void				*ft_realloc(void *ptr, size_t prev, size_t new_s);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memset(void *str, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
