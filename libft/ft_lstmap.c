@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 22:08:54 by stross            #+#    #+#             */
-/*   Updated: 2019/09/06 22:16:31 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/10 18:21:30 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*new;
 
-	if (lst)
+	if (lst && f)
 	{
 		new = (*f)(lst);
 		new->next = ft_lstmap(lst->next, f);
