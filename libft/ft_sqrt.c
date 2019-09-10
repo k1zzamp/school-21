@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/05 16:53:43 by stross            #+#    #+#             */
-/*   Updated: 2019/09/10 22:06:06 by stross           ###   ########.fr       */
+/*   Created: 2019/09/10 22:07:59 by stross            #+#    #+#             */
+/*   Updated: 2019/09/10 22:08:20 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memalloc(size_t size)
+int		ft_sqrt(int nb)
 {
-	void	*p;
+	int		c;
 
-	p = malloc(size);
-	if (p)
+	c = 0;
+	while (c * c <= nb)
 	{
-		ft_bzero(p, size);
-		return (p);
+		if (c * c == nb)
+			return (c);
+		c++;
 	}
-	else
-		return (NULL);
+	return (0);
 }
