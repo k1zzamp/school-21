@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/04 16:36:53 by stross            #+#    #+#             */
-/*   Updated: 2019/09/09 12:20:31 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/11 18:35:43 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *str)
 	unsigned int	i;
 
 	if (!str)
-		CRASH[0] += 1;
+		return (NULL);
 	i = 0;
 	copy = (char*)malloc(ft_strlen(str) + 1);
 	if (!copy)

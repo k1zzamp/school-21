@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 21:22:10 by stross            #+#    #+#             */
-/*   Updated: 2019/09/10 22:08:42 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/11 18:30:06 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # define LIBFT_H
 # define TRUE 1
 # define FALSE 0
-# define CRASH "Crash"
 # define ISSP(X) (X == ' ' || X == '\n' || X == '\t')
 
 # include <string.h>
