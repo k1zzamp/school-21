@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 16:36:53 by stross            #+#    #+#             */
-/*   Updated: 2019/09/11 22:56:01 by stross           ###   ########.fr       */
+/*   Created: 2019/09/11 19:43:56 by stross            #+#    #+#             */
+/*   Updated: 2019/09/11 22:31:55 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-char	*ft_strdup(const char *str)
+int		get_next_line(const int fd, char **line)
 {
-	char			*copy;
-	unsigned int	i;
-
-	i = 0;
-	copy = (char*)malloc(ft_strlen(str) + 1);
-	if (!copy)
-		return (NULL);
-	while (str[i])
-	{
-		copy[i] = str[i];
-		i++;
-	}
-	copy[i] = '\0';
-	return (copy);
+	
 }

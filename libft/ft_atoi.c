@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 15:32:28 by stross            #+#    #+#             */
-/*   Updated: 2019/09/11 16:52:42 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/11 23:06:35 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int					ft_atoi(const char *str)
 {
-	unsigned long long	sum;
-	int					sign;
+	unsigned long	sum;
+	int				sign;
 
 	sum = 0;
 	sign = 1;
@@ -37,7 +37,7 @@ int					ft_atoi(const char *str)
 		sum += (*str - '0');
 		str++;
 	}
-	if (sum <= 9223372036854775808uLL)
+	if (sum <= 9223372036854775808uL)
 		return ((int)sum * sign);
 	return (sign == 1 ? -1 : 0);
 }
