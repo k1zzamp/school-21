@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_lst_push_b.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/11 19:43:56 by stross            #+#    #+#             */
-/*   Updated: 2019/09/12 12:36:53 by stross           ###   ########.fr       */
+/*   Created: 2019/09/12 12:30:26 by stross            #+#    #+#             */
+/*   Updated: 2019/09/12 12:30:34 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
-int		get_next_line(const int fd, char **line)
+void	ft_lst_push_b(t_list **begin_list, void *content, size_t content_size)
 {
-	char	*buff[BUFF_SIZE];
-	ssize_t	nbread;
 	t_list	*list;
 
-	while ((nbread = read(fd, (void *) buff, BUFF_SIZE) != 0))
+	if (begin_list)
 	{
-		if (nbread == -1)
-			return (-1);
-
+		if (*begin_list == NULL)
+			*begin_list = ft_lstnew(content, content_size);
+		else
+		{
+			list = *begin_list;
+			while (list->next != NULL)
+				list = list->next;
+			list->next = ft_lstnew(content, content_size);
+		}
 	}
 }
