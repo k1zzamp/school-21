@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:43:56 by stross            #+#    #+#             */
-/*   Updated: 2019/09/13 16:54:21 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/13 22:44:26 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,24 @@ void	free_list(void *d, size_t s)
 	(void)s;
 }
 
-static char			*fill_arr(t_list *list, size_t len)
-{
-	char	*arr;
-	char	*temp;
-
-	arr = (char*)malloc(len + 1);
-	temp = arr;
-	while (list)
-	{
-		*arr = *((char*)list->content);
-		arr++;
-		list = list->next;
-	}
-	return (temp);
-}
-
-static size_t		get_len(t_list *list)
+static size_t		get_nl_len(t_list *list, t_bool *flag)
 {
 	size_t	len;
 
 	len = 0;
-	ft_putnbr(1);
 	while (list)
 	{
 		len++;
+		if (*(char*)list->content == NL)
+			return (len);
+		if (*(char*)list->content == END)
+		{
+			*flag = TRUE;
+			return (len);
+		}
 		list = list->next;
 	}
-	ft_putnbr(len);
-	return (len);
+	return (0);
 }
 
 static t_list		*get_input(const int fd, t_list *list)
@@ -57,11 +46,11 @@ static t_list		*get_input(const int fd, t_list *list)
 	char		end;
 
 	end = END;
-	while ((nbread = read(fd, (void *)buff, (size_t)BUFF_SIZE) != 0))
+	while ((nbread = read(fd, (void *)buff, (size_t)BUFF_SIZE)))
 	{
 		if (nbread == -1)
 			return (NULL);
-		buff[BUFF_SIZE] = END;
+		buff[nbread] = END;
 		pta = (char*)buff;
 		while (*pta)
 		{
@@ -75,21 +64,27 @@ static t_list		*get_input(const int fd, t_list *list)
 
 int 				get_next_line(const int fd, char **line)
 {
-	static char	*arr;
-	t_list		*list;
-	size_t		len;
+	static t_list	*list;
+	size_t			len;
+	char			*temp;
+	t_bool			flag;
 
-	list = NULL;
-	ft_putnbr(1);
-	list = get_input(fd, list);
-	ft_putnbr(2);
-	len = get_len(list);
-	ft_putnbr(3);
-	arr = fill_arr(list, len);
-	ft_lstdel(&list, &free_list);
-	*line = arr;
-//	if (list == NULL)
-//		return (-1);
-
-	return (-1);
+	flag = FALSE;
+	if (!list)
+		list = get_input(fd, list);
+	len = get_nl_len(list, &flag);
+	*line = (char*)malloc(len + 1);
+	temp = *line;
+	while (list)
+	{
+		if (*(char*)list->content == NL || *(char*)list->content == END)
+		{
+			list = list->next;
+			break;
+		}
+		*temp++ = *(char*)list->content;
+		list = list->next;
+	}
+	*temp = END;
+	return (flag == TRUE ? 0 : 1);
 }
