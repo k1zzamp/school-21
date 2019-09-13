@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:44:48 by stross            #+#    #+#             */
-/*   Updated: 2019/09/13 11:36:21 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/13 14:03:18 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 # define GET_NEXT_LINE_H
 
-# define BUFF_SIZE 4
+# define BUFF_SIZE 1
 # define NL '\n'
 # define END '\0'
 
