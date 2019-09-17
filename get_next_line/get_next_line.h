@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:44:48 by stross            #+#    #+#             */
-/*   Updated: 2019/09/17 19:58:32 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/17 20:38:22 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@
 # include <unistd.h>
 # include <stdio.h>
 
-typedef struct			s_buff_list
+typedef struct				s_buff_list
 {
-	char				*buff;
-	int					fd;
-	struct s_buff_list *next;
-}						t_buff_list;
+	char					*buff;
+	int						fd;
+	struct s_buff_list		*next;
+}							t_buff_list;
 
-int get_next_line(const int fd, char **line);
+int							get_next_line(const int fd, char **line);
 
 #endif
