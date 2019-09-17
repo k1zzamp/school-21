@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_lst_push_b.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 21:23:35 by stross            #+#    #+#             */
-/*   Updated: 2019/09/16 18:39:30 by stross           ###   ########.fr       */
+/*   Created: 2019/09/12 12:30:26 by stross            #+#    #+#             */
+/*   Updated: 2019/09/12 12:30:34 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(void *ptr, size_t prev, size_t new_s)
+void	ft_lst_push_b(t_list **begin_list, void *content, size_t content_size)
 {
-	void	*ret;
+	t_list	*list;
 
-	if (!ptr)
-		return (NULL);
-	ret = ft_memalloc(new_s);
-	if (!ret)
+	if (begin_list)
 	{
-		free(ptr);
-		return (NULL);
+		if (*begin_list == NULL)
+			*begin_list = ft_lstnew(content, content_size);
+		else
+		{
+			list = *begin_list;
+			while (list->next != NULL)
+				list = list->next;
+			list->next = ft_lstnew(content, content_size);
+		}
 	}
-	ft_memcpy(ret, ptr, prev < new_s ? prev : new_s);
-	free(ptr);
-	return (ret);
 }

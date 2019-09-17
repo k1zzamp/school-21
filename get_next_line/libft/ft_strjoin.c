@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 21:23:35 by stross            #+#    #+#             */
-/*   Updated: 2019/09/16 18:39:30 by stross           ###   ########.fr       */
+/*   Created: 2019/09/05 23:26:02 by stross            #+#    #+#             */
+/*   Updated: 2019/09/09 12:48:41 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(void *ptr, size_t prev, size_t new_s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	void	*ret;
+	unsigned int	len;
+	char			*arr;
 
-	if (!ptr)
+	if (s1 && s2)
+		len = ft_strlen((char*)s1) + ft_strlen((char*)s2);
+	else if (s1)
+		len = ft_strlen((char*)s1);
+	else if (s2)
+		len = ft_strlen((char*)s2);
+	else
 		return (NULL);
-	ret = ft_memalloc(new_s);
-	if (!ret)
-	{
-		free(ptr);
+	arr = (char*)malloc(len + 1);
+	if (!arr)
 		return (NULL);
-	}
-	ft_memcpy(ret, ptr, prev < new_s ? prev : new_s);
-	free(ptr);
-	return (ret);
+	if (s1)
+		arr = ft_strcpy(arr, (char*)s1);
+	else
+		arr = ft_strcpy(arr, (char*)s2);
+	if (s1 && s2)
+		arr = ft_strcat(arr, (char*)s2);
+	return (arr);
 }

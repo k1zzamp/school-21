@@ -1,30 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 21:23:35 by stross            #+#    #+#             */
-/*   Updated: 2019/09/16 18:39:30 by stross           ###   ########.fr       */
+/*   Created: 2019/09/05 15:32:28 by stross            #+#    #+#             */
+/*   Updated: 2019/09/11 23:06:35 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-void	*ft_realloc(void *ptr, size_t prev, size_t new_s)
+int					ft_atoi(const char *str)
 {
-	void	*ret;
+	unsigned long	sum;
+	int				sign;
 
-	if (!ptr)
-		return (NULL);
-	ret = ft_memalloc(new_s);
-	if (!ret)
+	sum = 0;
+	sign = 1;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '+')
+		str++;
+	else if (*str == '-')
 	{
-		free(ptr);
-		return (NULL);
+		sign = -1;
+		str++;
 	}
-	ft_memcpy(ret, ptr, prev < new_s ? prev : new_s);
-	free(ptr);
-	return (ret);
+	while (*str)
+	{
+		if (*str < '0' || *str > '9')
+			return ((int)sum * sign);
+		sum *= 10;
+		sum += (*str - '0');
+		str++;
+	}
+	if (sum <= 9223372036854775808uL)
+		return ((int)sum * sign);
+	return (sign == 1 ? -1 : 0);
 }

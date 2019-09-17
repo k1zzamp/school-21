@@ -5,86 +5,138 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/11 19:43:56 by stross            #+#    #+#             */
-/*   Updated: 2019/09/13 22:44:26 by stross           ###   ########.fr       */
+/*   Created: 2019/09/16 10:40:43 by stross            #+#    #+#             */
+/*   Updated: 2019/09/17 19:49:16 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	free_list(void *d, size_t s)
+static void		ft_l_push(t_buff_list **start, char *cont, const int fd)
 {
-	free(d);
-	(void)s;
+	t_buff_list *list;
+
+	if (start == NULL)
+	{
+		*start = (t_buff_list*)ft_memalloc(sizeof(t_buff_list));
+		(*start)->buff = cont;
+		(*start)->fd = fd;
+	}
+	else
+	{
+		list = (t_buff_list*)ft_memalloc(sizeof(t_buff_list));
+		list->buff = cont;
+		list->fd = fd;
+		list->next = *start;
+		*start = list;
+	}
 }
 
-static size_t		get_nl_len(t_list *list, t_bool *flag)
+/*
+static void		ft_l_push(t_buff_list **start, char *cont, const int fd)
 {
-	size_t	len;
+	t_buff_list	*list;
 
-	len = 0;
+	if (start)
+	{
+		if (*start == NULL)
+		{
+			list = *start;
+			if ((list = (t_buff_list*)ft_memalloc(sizeof(t_buff_list))))
+			{
+				list->buff = cont;
+				list->fd = fd;
+				*start = list;
+			}
+		}
+		else
+		{
+			list = *start;
+			while (list->next != NULL)
+				list = list->next;
+			if ((list->next = (t_buff_list*)ft_memalloc(sizeof(t_buff_list))))
+			{
+				list->next->buff = cont;
+				list->next->fd = fd;
+			}
+		}
+	}
+}
+*/
+static ssize_t	get_input(t_buff_list **list, const int fd)
+{
+	char	buff[BUFF_SIZE + 1];
+	ssize_t	nbread;
+	char	*str;
+	char	*tmp;
+
+	str = NULL;
+	while ((nbread = read(fd, (void*)buff, BUFF_SIZE)))
+	{
+		if (str == NULL)
+		{
+			buff[nbread] = END;
+			str = ft_strdup(buff);
+		}
+		else
+		{
+			tmp = str;
+			buff[nbread] = END;
+			str = ft_strjoin(tmp, buff);
+			free(tmp);
+		}
+	}
+	ft_l_push(list, (char*)str, fd);
+	return (nbread);
+}
+
+static ssize_t	fill_line(const int fd, char **line, t_buff_list *list)
+{
+	char	*temp;
+	char	*ptt;
+
 	while (list)
 	{
-		len++;
-		if (*(char*)list->content == NL)
-			return (len);
-		if (*(char*)list->content == END)
-		{
-			*flag = TRUE;
-			return (len);
-		}
+		if (list->fd == fd)
+			break ;
 		list = list->next;
 	}
-	return (0);
+	if (*(list->buff) == END)
+		return (0);
+	temp = list->buff;
+	ptt = temp;
+	while (*ptt && *ptt != NL)
+		ptt++;
+	*line = ft_strsub(temp, 0, ptt - temp);
+	if (*ptt == NL)
+		ptt++;
+	ptt = ft_strdup(ptt);
+	free(list->buff);
+	list->buff = ptt;
+	return (1);
 }
 
-static t_list		*get_input(const int fd, t_list *list)
+int				get_next_line(const int fd, char **line)
 {
-	char		buff[BUFF_SIZE + 1];
-	char		*pta;
-	ssize_t		nbread;
-	char		end;
+	static t_buff_list  *list;
+	t_buff_list			*temp;
+	ssize_t				ret;
+	char				test[1];
 
-	end = END;
-	while ((nbread = read(fd, (void *)buff, (size_t)BUFF_SIZE)))
+	if (!line || fd < 0 || read(fd, test, 0) == -1)
+		        return (-1);
+	temp = list;
+	while (temp)
 	{
-		if (nbread == -1)
-			return (NULL);
-		buff[nbread] = END;
-		pta = (char*)buff;
-		while (*pta)
-		{
-			ft_lst_push_b(&list, (void *)pta, 1);
-			pta++;
-		}
+		if (temp->fd == fd)
+			break ;
+		temp = temp->next;
 	}
-	ft_lst_push_b(&list, (void *) &end, 1);
-	return (list);
-}
-
-int 				get_next_line(const int fd, char **line)
-{
-	static t_list	*list;
-	size_t			len;
-	char			*temp;
-	t_bool			flag;
-
-	flag = FALSE;
-	if (!list)
-		list = get_input(fd, list);
-	len = get_nl_len(list, &flag);
-	*line = (char*)malloc(len + 1);
-	temp = *line;
-	while (list)
+	if (temp == NULL)
 	{
-		if (*(char*)list->content == NL || *(char*)list->content == END)
-		{
-			list = list->next;
-			break;
-		}
-		*temp++ = *(char*)list->content;
-		list = list->next;
+		if ((ret = get_input(&list, fd) == -1))
+			return (-1);
 	}
-	*temp = END;
-	return (flag == TRUE ? 0 : 1);
+	ret = fill_line(fd, line, list);
+	return (ret);
 }

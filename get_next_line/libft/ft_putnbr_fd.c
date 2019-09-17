@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 21:23:35 by stross            #+#    #+#             */
-/*   Updated: 2019/09/16 18:39:30 by stross           ###   ########.fr       */
+/*   Created: 2019/09/06 19:17:08 by stross            #+#    #+#             */
+/*   Updated: 2019/09/09 15:57:31 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(void *ptr, size_t prev, size_t new_s)
+void	ft_putnbr_fd(int n, int fd)
 {
-	void	*ret;
+	unsigned int	nbr;
 
-	if (!ptr)
-		return (NULL);
-	ret = ft_memalloc(new_s);
-	if (!ret)
+	if (fd > 0)
 	{
-		free(ptr);
-		return (NULL);
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			nbr = (unsigned int)(n * -1);
+		}
+		else
+			nbr = (unsigned int)n;
+		if (nbr >= 10)
+			ft_putnbr_fd(nbr / 10, fd);
+		ft_putchar_fd((char)(nbr % 10 + '0'), fd);
 	}
-	ft_memcpy(ret, ptr, prev < new_s ? prev : new_s);
-	free(ptr);
-	return (ret);
 }

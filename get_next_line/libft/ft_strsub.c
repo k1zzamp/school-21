@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 21:23:35 by stross            #+#    #+#             */
-/*   Updated: 2019/09/16 18:39:30 by stross           ###   ########.fr       */
+/*   Created: 2019/09/05 23:00:49 by stross            #+#    #+#             */
+/*   Updated: 2019/09/09 20:15:25 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(void *ptr, size_t prev, size_t new_s)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	void	*ret;
+	char	*subs;
+	char	*ret;
 
-	if (!ptr)
-		return (NULL);
-	ret = ft_memalloc(new_s);
-	if (!ret)
+	if (s)
 	{
-		free(ptr);
-		return (NULL);
+		s += start;
+		subs = (char*)malloc(len + 1);
+		if (subs)
+		{
+			ret = subs;
+			while (*s && len--)
+				*subs++ = *s++;
+			*subs = '\0';
+			return (ret);
+		}
+		else
+			return (NULL);
 	}
-	ft_memcpy(ret, ptr, prev < new_s ? prev : new_s);
-	free(ptr);
-	return (ret);
+	return (NULL);
 }

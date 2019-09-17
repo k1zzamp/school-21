@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 21:23:35 by stross            #+#    #+#             */
-/*   Updated: 2019/09/16 18:39:30 by stross           ###   ########.fr       */
+/*   Created: 2019/09/04 10:55:49 by stross            #+#    #+#             */
+/*   Updated: 2019/09/11 18:50:38 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(void *ptr, size_t prev, size_t new_s)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	void	*ret;
+	unsigned char		*d;
+	const unsigned char	*s;
+	t_bool				flag;
 
-	if (!ptr)
-		return (NULL);
-	ret = ft_memalloc(new_s);
-	if (!ret)
+	d = (unsigned char*)dest;
+	s = (const unsigned char*)src;
+	c = (unsigned char)c;
+	flag = FALSE;
+	while (n--)
 	{
-		free(ptr);
-		return (NULL);
+		*d = *s;
+		if (*s == c)
+		{
+			*d = *s;
+			flag = TRUE;
+			break ;
+		}
+		d++;
+		s++;
 	}
-	ft_memcpy(ret, ptr, prev < new_s ? prev : new_s);
-	free(ptr);
-	return (ret);
+	if (flag)
+		return ((void*)++d);
+	else
+		return (NULL);
 }

@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 21:23:35 by stross            #+#    #+#             */
-/*   Updated: 2019/09/16 18:39:30 by stross           ###   ########.fr       */
+/*   Created: 2019/09/06 15:03:37 by stross            #+#    #+#             */
+/*   Updated: 2019/09/06 15:07:16 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(void *ptr, size_t prev, size_t new_s)
+char	*ft_strrev(char *str)
 {
-	void	*ret;
+	int		i;
+	int		size;
+	char	temp;
 
-	if (!ptr)
-		return (NULL);
-	ret = ft_memalloc(new_s);
-	if (!ret)
+	i = 0;
+	size = 0;
+	if (str)
 	{
-		free(ptr);
-		return (NULL);
+		while (str[size] != '\0')
+		{
+			size++;
+		}
+		while (i < size / 2)
+		{
+			temp = str[i];
+			str[i] = str[size - i - 1];
+			str[size - i - 1] = temp;
+			++i;
+		}
 	}
-	ft_memcpy(ret, ptr, prev < new_s ? prev : new_s);
-	free(ptr);
-	return (ret);
+	return (str);
 }

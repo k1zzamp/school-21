@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 21:23:35 by stross            #+#    #+#             */
-/*   Updated: 2019/09/16 18:39:30 by stross           ###   ########.fr       */
+/*   Created: 2019/09/05 13:36:38 by stross            #+#    #+#             */
+/*   Updated: 2019/09/07 17:11:00 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(void *ptr, size_t prev, size_t new_s)
+char	*ft_strnstr(const char *str, const char *find, size_t n)
 {
-	void	*ret;
+	unsigned int pos;
+	unsigned int i;
 
-	if (!ptr)
-		return (NULL);
-	ret = ft_memalloc(new_s);
-	if (!ret)
+	if (!*find)
+		return ((char*)str);
+	pos = 0;
+	while (str[pos] != '\0' && (size_t)pos < n)
 	{
-		free(ptr);
-		return (NULL);
+		if (str[pos] == find[0])
+		{
+			i = 1;
+			while (find[i] != '\0' && str[pos + i] == find[i] &&
+					(size_t)(pos + i) < n)
+				++i;
+			if (find[i] == '\0')
+				return ((char*)&str[pos]);
+		}
+		++pos;
 	}
-	ft_memcpy(ret, ptr, prev < new_s ? prev : new_s);
-	free(ptr);
-	return (ret);
+	return (0);
 }
