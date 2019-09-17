@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 10:40:43 by stross            #+#    #+#             */
-/*   Updated: 2019/09/17 19:49:16 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/17 20:05:10 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,37 +32,6 @@ static void		ft_l_push(t_buff_list **start, char *cont, const int fd)
 	}
 }
 
-/*
-static void		ft_l_push(t_buff_list **start, char *cont, const int fd)
-{
-	t_buff_list	*list;
-
-	if (start)
-	{
-		if (*start == NULL)
-		{
-			list = *start;
-			if ((list = (t_buff_list*)ft_memalloc(sizeof(t_buff_list))))
-			{
-				list->buff = cont;
-				list->fd = fd;
-				*start = list;
-			}
-		}
-		else
-		{
-			list = *start;
-			while (list->next != NULL)
-				list = list->next;
-			if ((list->next = (t_buff_list*)ft_memalloc(sizeof(t_buff_list))))
-			{
-				list->next->buff = cont;
-				list->next->fd = fd;
-			}
-		}
-	}
-}
-*/
 static ssize_t	get_input(t_buff_list **list, const int fd)
 {
 	char	buff[BUFF_SIZE + 1];
@@ -118,13 +87,13 @@ static ssize_t	fill_line(const int fd, char **line, t_buff_list *list)
 
 int				get_next_line(const int fd, char **line)
 {
-	static t_buff_list  *list;
+	static t_buff_list	*list;
 	t_buff_list			*temp;
 	ssize_t				ret;
 	char				test[1];
 
 	if (!line || fd < 0 || read(fd, test, 0) == -1)
-		        return (-1);
+		return (-1);
 	temp = list;
 	while (temp)
 	{
