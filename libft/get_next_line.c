@@ -6,11 +6,11 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 10:40:43 by stross            #+#    #+#             */
-/*   Updated: 2019/09/17 20:40:30 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/19 18:58:35 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static void		ft_l_push(t_buff_list **start, char *cont, const int fd)
 {

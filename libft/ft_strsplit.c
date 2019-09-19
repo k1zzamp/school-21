@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 13:34:57 by stross            #+#    #+#             */
-/*   Updated: 2019/09/14 14:35:43 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/19 18:34:03 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,19 @@ static int		get_word_len(char const *str, char c)
 	return (len);
 }
 
-static char		**free_mem(char **arr, int i)
+static char		**free_mem(char **arr)
 {
-	arr[i] = NULL;
-	while (i--)
+	size_t	i;
+
+	i = 0;
+	while (arr[i] != 0)
+	{
 		free(arr[i]);
+		i++;
+	}
 	free(arr);
-	return (NULL);
+	arr = NULL;
+	return (arr);
 }
 
 char			**ft_strsplit(char const *s, char c)
@@ -73,7 +79,7 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		k = 0;
 		if (!(str2[i] = ft_strnew(get_word_len(&s[j], c) + 1)))
-			return (str2 = free_mem(str2, i));
+			return (str2 = free_mem(str2));
 		while (s[j] == c)
 			j++;
 		while (s[j] != c && s[j])

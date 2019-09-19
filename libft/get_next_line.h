@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 19:44:48 by stross            #+#    #+#             */
-/*   Updated: 2019/09/17 20:38:22 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/19 18:57:18 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # define NL '\n'
 # define END '\0'
 
-# include "libft/libft.h"
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <fcntl.h>

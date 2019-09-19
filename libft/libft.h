@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 21:22:10 by stross            #+#    #+#             */
-/*   Updated: 2019/09/13 23:36:02 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/19 18:57:46 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define FALSE 0
 # define ISSP(X) (X == ' ' || X == '\n' || X == '\t')
 
+# include "get_next_line.h"
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
