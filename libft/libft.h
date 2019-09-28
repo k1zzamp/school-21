@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 21:22:10 by stross            #+#    #+#             */
-/*   Updated: 2019/09/19 18:57:46 by stross           ###   ########.fr       */
+/*   Updated: 2019/09/28 16:14:16 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ char				**ft_strsplit(char const *s, char c);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlen(const char *str);
 size_t				ft_strnlen(const char *str, size_t maxlen);
+size_t				check_on_bits(int num);
 
 #endif
