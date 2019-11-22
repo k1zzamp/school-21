@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 17:48:45 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 19:03:03 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 22:08:22 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,7 @@ void	print_o_l_help4(long num, char *str, int len, int z_flag)
 	if (g_pf_flags.flag_hash && num != 0 && g_pf_flags.precision < len)
 		g_pf_flags.width--;
 	while (g_pf_flags.width > len && g_pf_flags.width > g_pf_flags.precision)
-	{
-		if (g_pf_flags.flag_zero == 1 && ! g_pf_flags.dot)
-		{
-			if (g_pf_flags.flag_hash && num != 0 && !z_flag)
-				g_pf_flags.x == 1 ? ft_putstr_g(OCT) : ft_putstr_g(OCT);
-			ft_putchar_g('0');
-			z_flag = 1;
-		}
-		else
-			ft_putchar_g(' ');
-		g_pf_flags.width--;
-	}
+		print_o_l_help5(num, &z_flag);
 	while (g_pf_flags.precision > len)
 	{
 		if (!z_flag && g_pf_flags.flag_hash && num != 0)
@@ -113,10 +102,10 @@ void	print_o_l_help3(long num, char *str, int len, int z_flag)
 
 void	print_o_l(va_list arg)
 {
-	long 	num;
+	long	num;
 	char	*str;
-	int 	len;
-	int 	z_flag;
+	int		len;
+	int		z_flag;
 
 	z_flag = 0;
 	num = va_arg(arg, long);

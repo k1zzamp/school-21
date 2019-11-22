@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 18:01:11 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 18:01:32 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 22:56:37 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void	set_struct_4(const char **format)
 
 void	set_struct_3(const char **format, _Bool dot_flag)
 {
-	char 	*temp;
+	char	*temp;
 
-	if (**format >= '0' && **format <= '9' && dot_flag)  // WAS 1!!!!!!! 533 float tests all good
+	if (**format >= '0' && **format <= '9' && dot_flag)
 	{
 		g_pf_flags.precision = ft_atoi((*format));
 		temp = ft_itoa(g_pf_flags.precision);
@@ -65,7 +65,7 @@ void	set_struct_3(const char **format, _Bool dot_flag)
 
 void	set_struct_2(const char **format, _Bool dot_flag)
 {
-	char 	*temp;
+	char	*temp;
 
 	if (**format >= '1' && **format <= '9' && !(dot_flag))
 	{
@@ -109,7 +109,7 @@ void	set_struct(va_list arg, const char **format)
 		if (set_format(format))
 		{
 			print_arg(arg);
-			break;
+			break ;
 		}
 	}
 }
@@ -118,6 +118,8 @@ void	parser(va_list arg, const char *format)
 {
 	while (*format)
 	{
+		if (*format == '{')
+			format += check_color(format);
 		if (*format == '%')
 		{
 			format++;
@@ -131,7 +133,10 @@ void	parser(va_list arg, const char *format)
 			null_struct();
 			continue ;
 		}
-		ft_putchar_g(*format);
-		format++;
+		if (*format != '\0')
+		{
+			ft_putchar_g(*format);
+			format++;
+		}
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 15:14:37 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:15:29 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 20:56:57 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	check_size(int n)
+static int			check_size(int n)
 {
 	unsigned int	len;
 	long int		nb;
@@ -29,7 +29,7 @@ static int	check_size(int n)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	long int		buf;
 	unsigned int	size;
@@ -58,7 +58,7 @@ char		*ft_itoa(int n)
 	return (arr);
 }
 
-void	*ft_memset(void *str, int c, size_t n)
+void				*ft_memset(void *str, int c, size_t n)
 {
 	unsigned char	*arr;
 
@@ -69,7 +69,7 @@ void	*ft_memset(void *str, int c, size_t n)
 	return (str);
 }
 
-char	*ft_strnew(size_t size)
+char				*ft_strnew(size_t size)
 {
 	void			*p;
 
@@ -87,7 +87,7 @@ char	*ft_strnew(size_t size)
 	return (NULL);
 }
 
-int		ft_isspace(int c)
+int					ft_isspace(int c)
 {
 	c = (unsigned char)c;
 	if (c == '\t' || c == '\n' || c == '\v'

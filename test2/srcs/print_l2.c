@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:34:44 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 19:00:11 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 20:31:23 by mtytos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ void	print_long_help3(long x, int len, int pres, char *str)
 void	print_long(va_list arg)
 {
 	long		x;
-	char 		*str;
-	char 		*to_free;
+	char		*str;
+	char		*to_free;
 	int			len;
-	int 		pres;
+	int			pres;
 
 	pres = 0;
 	x = va_arg(arg, long);

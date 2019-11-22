@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 17:32:51 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 19:06:21 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 20:33:58 by mtytos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,10 @@ void	print_x_l_help3(long num, int len, char *str, int z_flag)
 
 void	print_x_l(va_list arg)
 {
-	long 	num;
+	long	num;
 	char	*str;
-	int 	len;
-	int 	z_flag;
+	int		len;
+	int		z_flag;
 
 	z_flag = 0;
 	num = va_arg(arg, long);

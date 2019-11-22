@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 15:45:13 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 18:55:04 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 20:41:56 by mtytos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	print_ui_long_no_f_help(char *str, int len)
 	while (g_pf_flags.width > len && g_pf_flags.width > g_pf_flags.precision)
 	{
 		g_pf_flags.width--;
-		g_pf_flags.flag_zero == 1 && g_pf_flags.precision == 0 ? ft_putchar_g('0') : ft_putchar_g(' ');
+		g_pf_flags.flag_zero == 1 &&
+			g_pf_flags.precision == 0 ? ft_putchar_g('0') : ft_putchar_g(' ');
 	}
 	while ((g_pf_flags.precision - len) > 0)
 	{
@@ -30,10 +31,10 @@ void	print_ui_long_no_f_help(char *str, int len)
 void	print_ui_long_no_f(va_list arg)
 {
 	unsigned long	i;
-	int 			len;
-	char 			*str;
+	int				len;
+	char			*str;
 
-	i = va_arg(arg,unsigned long);
+	i = va_arg(arg, unsigned long);
 	str = ft_ultoa(i);
 	len = ft_strlen(str);
 	if (i == 0 && g_pf_flags.dot && g_pf_flags.precision == 0)
@@ -81,10 +82,10 @@ void	print_long_ui_m_help2(char *str, int len, unsigned long i)
 void	print_long_ui_m(va_list arg)
 {
 	unsigned long	i;
-	int 			len;
-	char 			*str;
+	int				len;
+	char			*str;
 
-	i = va_arg(arg,unsigned long);
+	i = va_arg(arg, unsigned long);
 	str = ft_ultoa(i);
 	len = ft_strlen(str);
 	if (g_pf_flags.precision - len > 0)

@@ -6,13 +6,13 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 18:00:22 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 18:00:40 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 21:03:36 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void 	print_arg(va_list arg)
+void	print_arg(va_list arg)
 {
 	if (g_pf_flags.u)
 		print_u(arg);
@@ -24,7 +24,7 @@ void 	print_arg(va_list arg)
 		print_s(arg);
 	if (g_pf_flags.p)
 		print_p(arg);
-	if (g_pf_flags.x || g_pf_flags.X)
+	if (g_pf_flags.x || g_pf_flags.xu)
 		print_x(arg);
 	if (g_pf_flags.o)
 		print_o(arg);
@@ -32,7 +32,7 @@ void 	print_arg(va_list arg)
 		print_fl(arg);
 }
 
-int 	set_format_3(const char **format)
+int		set_format_3(const char **format)
 {
 	if (**format == 'c')
 	{
@@ -61,7 +61,7 @@ int 	set_format_3(const char **format)
 	return (0);
 }
 
-int 	set_format_2(const char **format)
+int		set_format_2(const char **format)
 {
 	if (**format == 'u')
 	{
@@ -77,14 +77,14 @@ int 	set_format_2(const char **format)
 	}
 	if (**format == 'X')
 	{
-		g_pf_flags.X = 1;
+		g_pf_flags.xu = 1;
 		(*format)++;
 		return (1);
 	}
 	return (set_format_3(format));
 }
 
-int 	set_format(const char **format)
+int		set_format(const char **format)
 {
 	if (**format == 'd')
 	{
@@ -111,7 +111,7 @@ void	set_struct_5(const char **format)
 {
 	if (**format == 'L')
 	{
-		g_pf_flags.L = 1;
+		g_pf_flags.lu = 1;
 		(*format)++;
 	}
 	if (**format != 'L' && **format != 'l' && **format != 'h'
@@ -119,7 +119,7 @@ void	set_struct_5(const char **format)
 		&& **format != ' ' && **format != '0' && **format != 'd'
 		&& **format != 'i' && **format != 'u' && **format != 'o'
 		&& **format != 'x' && **format != 'X' && !(**format >= '1'
-												   && **format <= '9') && **format != 'c' && **format != 's'
+		&& **format <= '9') && **format != 'c' && **format != 's'
 		&& **format != 'p' && **format != '.' && **format != 'f')
 		(*format)++;
 }

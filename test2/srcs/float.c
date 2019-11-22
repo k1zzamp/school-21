@@ -6,14 +6,14 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 15:24:23 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 18:02:19 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 20:56:27 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 static void				ft_float_help(long double *nb, long *i,
-										 long *acc, int *sgn)
+		long *acc, int *sgn)
 {
 	*nb = (*nb < 0) ? -(*nb) : *nb;
 	*i = 0;

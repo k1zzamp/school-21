@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_u3.c                                        :+:      :+:    :+:   */
+/*   print_c.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/22 15:49:42 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:50:15 by stross           ###   ########.fr       */
+/*   Created: 2019/11/22 16:44:44 by stross            #+#    #+#             */
+/*   Updated: 2019/11/22 20:24:21 by mtytos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_u(va_list arg)
+void	print_c_help(char c)
 {
-	if (!(g_pf_flags.l || g_pf_flags.ll))
+	ft_putchar_g(c);
+	while (g_pf_flags.width > 1)
 	{
-		if (!(g_pf_flags.flag_hash || g_pf_flags.flag_plus
-			  || g_pf_flags.flag_minus || g_pf_flags.flag_space))
-			print_ui_no_f(arg);
-		else
-			print_ui_m(arg);
+		g_pf_flags.width--;
+		g_pf_flags.flag_zero == 1 ? ft_putchar_g('0') : ft_putchar_g(' ');
 	}
-	if ((g_pf_flags.l || g_pf_flags.ll))
+}
+
+void	print_c(va_list arg)
+{
+	char	c;
+
+	c = va_arg(arg, int);
+	if (g_pf_flags.flag_minus)
+		print_c_help(c);
+	else
 	{
-		if (!(g_pf_flags.flag_hash || g_pf_flags.flag_plus
-			  || g_pf_flags.flag_minus || g_pf_flags.flag_space))
-			print_ui_long_no_f(arg);
-		else
-			print_long_ui_m(arg);
+		while (g_pf_flags.width > 1)
+		{
+			g_pf_flags.width--;
+			g_pf_flags.flag_zero == 1 ? ft_putchar_g('0') : ft_putchar_g(' ');
+		}
+		ft_putchar_g(c);
 	}
 }

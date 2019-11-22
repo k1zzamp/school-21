@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   libft_f3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mtytos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/22 15:16:16 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:18:34 by stross           ###   ########.fr       */
+/*   Created: 2019/11/22 15:16:16 by mtytos            #+#    #+#             */
+/*   Updated: 2019/11/22 20:22:43 by mtytos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *str)
+char					*ft_strdup(const char *str)
 {
 	char			*copy;
 	unsigned int	i;
@@ -30,13 +30,13 @@ char	*ft_strdup(const char *str)
 	return (copy);
 }
 
-void	ft_putchar_g(char c)
+void					ft_putchar_g(char c)
 {
 	write(1, &c, 1);
 	g_pf_ret++;
 }
 
-void	ft_putstr_g(char *str)
+void					ft_putstr_g(char *str)
 {
 	while (*str)
 		ft_putchar_g(*str++);
@@ -69,7 +69,7 @@ char					*ft_itoa_base_v(long long dig, int base, char a)
 	return (s);
 }
 
-char	*ft_ltoa(long n)
+char					*ft_ltoa(long n)
 {
 	char	*s;
 	long	nb;

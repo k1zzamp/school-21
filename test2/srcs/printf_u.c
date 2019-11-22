@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 15:36:35 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:46:39 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 20:40:45 by mtytos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	print_ui_m_help(int len, char *str)
 
 void	print_ui_m(va_list arg)
 {
-	unsigned int i;
-	int 		len;
-	char 		*str;
+	unsigned int	i;
+	int				len;
+	char			*str;
 
-	i = va_arg(arg,unsigned int);
+	i = va_arg(arg, unsigned int);
 	i = check_mod(i);
 	str = ft_uitoa(i);
 	len = ft_strlen(str);
@@ -60,7 +60,8 @@ void	print_ui_no_f_help(char *str, int len)
 	while (g_pf_flags.width > len && g_pf_flags.width > g_pf_flags.precision)
 	{
 		g_pf_flags.width--;
-		g_pf_flags.flag_zero == 1 && g_pf_flags.precision == 0 ? ft_putchar_g('0') : ft_putchar_g(' ');
+		g_pf_flags.flag_zero == 1 &&
+			g_pf_flags.precision == 0 ? ft_putchar_g('0') : ft_putchar_g(' ');
 	}
 	while ((g_pf_flags.precision - len) > 0)
 	{
@@ -73,10 +74,10 @@ void	print_ui_no_f_help(char *str, int len)
 void	print_ui_no_f(va_list arg)
 {
 	unsigned int	i;
-	int 			len;
-	char 			*str;
+	int				len;
+	char			*str;
 
-	i = va_arg(arg,unsigned int);
+	i = va_arg(arg, unsigned int);
 	i = check_mod(i);
 	str = ft_uitoa(i);
 	len = ft_strlen(str);

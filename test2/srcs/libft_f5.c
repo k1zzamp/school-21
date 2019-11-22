@@ -6,13 +6,13 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 15:22:09 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:23:52 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 21:11:35 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	check_size_ltoa(long n)
+static int		check_size_ltoa(long n)
 {
 	unsigned int	len;
 	long int		nb;
@@ -29,7 +29,7 @@ static int	check_size_ltoa(long n)
 	return (len);
 }
 
-char		*ft_itoa_ltoa(long n)
+char			*ft_itoa_ltoa(long n)
 {
 	long			buf;
 	unsigned int	size;
@@ -100,7 +100,7 @@ char			*ft_itoa_base_pf(uintptr_t value, unsigned int base)
 	return (arr);
 }
 
-void	null_struct(void)
+void			null_struct(void)
 {
 	g_pf_flags.flag_hash = 0;
 	g_pf_flags.flag_zero = 0;
@@ -113,13 +113,13 @@ void	null_struct(void)
 	g_pf_flags.h = 0;
 	g_pf_flags.l = 0;
 	g_pf_flags.ll = 0;
-	g_pf_flags.L = 0;
+	g_pf_flags.lu = 0;
 	g_pf_flags.d = 0;
 	g_pf_flags.i = 0;
 	g_pf_flags.o = 0;
 	g_pf_flags.u = 0;
 	g_pf_flags.x = 0;
-	g_pf_flags.X = 0;
+	g_pf_flags.xu = 0;
 	g_pf_flags.c = 0;
 	g_pf_flags.s = 0;
 	g_pf_flags.p = 0;

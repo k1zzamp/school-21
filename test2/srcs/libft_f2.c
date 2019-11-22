@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft_f2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mtytos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/22 15:15:33 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:16:09 by stross           ###   ########.fr       */
+/*   Created: 2019/11/22 15:15:33 by mtytos            #+#    #+#             */
+/*   Updated: 2019/11/22 20:07:29 by mtytos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int					ft_atoi(const char *str)
 	return (sign == 1 ? -1 : 0);
 }
 
-void	ft_bzero(void *str, size_t n)
+void				ft_bzero(void *str, size_t n)
 {
 	unsigned char	*arr;
 
@@ -50,8 +50,7 @@ void	ft_bzero(void *str, size_t n)
 		*arr++ = 0;
 }
 
-
-void	*ft_memalloc(size_t size)
+void				*ft_memalloc(size_t size)
 {
 	void	*p;
 
@@ -67,7 +66,7 @@ void	*ft_memalloc(size_t size)
 		return (NULL);
 }
 
-size_t	ft_strlen(const char *str)
+size_t				ft_strlen(const char *str)
 {
 	size_t	count;
 
