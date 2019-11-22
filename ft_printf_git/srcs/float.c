@@ -6,13 +6,13 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 15:24:23 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:25:12 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 18:02:19 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-tatic void				ft_float_help(long double *nb, long *i,
+static void				ft_float_help(long double *nb, long *i,
 										 long *acc, int *sgn)
 {
 	*nb = (*nb < 0) ? -(*nb) : *nb;

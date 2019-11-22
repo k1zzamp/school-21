@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:34:44 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 16:35:32 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 17:22:44 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_long_help6(long x, char *str)
 void	print_long_help3(long x, int len, int pres, char *str)
 {
 	if (g_pf_flags.flag_minus)
-		print_long_help4(x, len, pres, *str)
+		print_long_help4(x, len, pres, str)
 	else
 	{
 		if (g_pf_flags.precision > 0)
