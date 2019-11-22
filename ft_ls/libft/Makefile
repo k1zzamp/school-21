@@ -6,7 +6,7 @@
 #    By: stross <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 23:29:07 by stross            #+#    #+#              #
-#    Updated: 2019/11/18 11:38:47 by stross           ###   ########.fr        #
+#    Updated: 2019/11/05 15:10:07 by stross           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strnew.c ft_strnlen.c ft_strnstr.c ft_strrchr.c ft_strrev.c \
 		ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c \
 		ft_toupper.c ft_sqrt.c ft_realloc.c ft_lst_push_b.c ft_free_list.c \
-		get_next_line.c ft_check_on_bits.c ft_itoa_base.c \
+		get_next_line.c ft_check_on_bits.c ft_itoa_base.c ft_printf.c \
 
 OBJ = $(SRCS:.c=.o)
 

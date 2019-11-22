@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 20:15:09 by stross            #+#    #+#             */
-/*   Updated: 2019/10/05 18:50:18 by stross           ###   ########.fr       */
+/*   Created: 2019/09/04 16:36:53 by stross            #+#    #+#             */
+/*   Updated: 2019/09/11 22:56:01 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+char	*ft_strdup(const char *str)
 {
-	t_list	*new_list;
+	char			*copy;
+	unsigned int	i;
 
-	new_list = (t_list*)malloc(sizeof(t_list));
-	if (!new_list)
+	i = 0;
+	copy = (char*)malloc(ft_strlen(str) + 1);
+	if (!copy)
 		return (NULL);
-	if (!content)
+	while (str[i])
 	{
-		new_list->content = NULL;
-		new_list->content_size = 0;
+		copy[i] = str[i];
+		i++;
 	}
-	else
-	{
-		if (!(new_list->content = (void*)malloc(content_size)))
-			return (NULL);
-		ft_memcpy(new_list->content, content, content_size);
-		new_list->content_size = content_size;
-	}
-	new_list->next = NULL;
-	return (new_list);
+	copy[i] = '\0';
+	return (copy);
 }

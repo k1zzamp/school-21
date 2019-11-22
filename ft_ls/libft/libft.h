@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 21:22:10 by stross            #+#    #+#             */
-/*   Updated: 2019/11/18 11:39:49 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/05 15:09:47 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void				*ft_memchr(const void *str, int c, size_t n);
 void				ft_bzero(void *str, size_t n);
 void				ft_memdel(void **ap);
 void				ft_putchar(char c);
+void				ft_printf(const char *format, ...);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
