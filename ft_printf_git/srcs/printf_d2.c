@@ -6,11 +6,11 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:23:51 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 17:23:11 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 19:00:46 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	print_int_help6(long x, char *str)
 {
@@ -40,7 +40,7 @@ void	print_int_help6(long x, char *str)
 void	print_int_help3(long x, int len, int pres, char *str)
 {
 	if (g_pf_flags.flag_minus)
-		print_int_help4(x, len, pres, str)
+		print_int_help4(x, len, pres, str);
 	else
 	{
 		if (g_pf_flags.precision > 0)
@@ -66,6 +66,7 @@ void	print_int(va_list arg)
 	int			len;
 	int 		pres;
 
+	pres = 0;
 	x = (long)va_arg(arg, int);
 	x = check_mod_l(x);
 	str = ft_ltoa(x);

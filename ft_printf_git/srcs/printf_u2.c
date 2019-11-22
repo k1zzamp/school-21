@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 15:45:13 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 15:49:38 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 18:55:04 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	print_long_ui_m_help1(char *str, int len)
 	ft_putstr_g(str);
 }
 
-void	print_long_ui_m_help2(char *str, int len)
+void	print_long_ui_m_help2(char *str, int len, unsigned long i)
 {
 	if (i != 0 || g_pf_flags.dot == 0)
 		ft_putstr_g(str);
@@ -90,6 +90,6 @@ void	print_long_ui_m(va_list arg)
 	if (g_pf_flags.precision - len > 0)
 		print_long_ui_m_help1(str, len);
 	else
-		print_long_ui_m_help2(char *str, int len);
+		print_long_ui_m_help2(str, len, i);
 	free(str);
 }

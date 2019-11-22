@@ -6,11 +6,11 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 16:33:34 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 16:34:34 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 18:55:16 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 void	print_long_help2(void)
 {

@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 17:48:45 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 18:10:02 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 19:03:03 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	print_o_l_help1(void)
 	}
 }
 
-void	print_o_l_help3(long num, char *str, int len, int z_flag)
+void	print_o_l_help4(long num, char *str, int len, int z_flag)
 {
 	if (g_pf_flags.flag_hash && num != 0 && g_pf_flags.precision < len)
 		g_pf_flags.width--;

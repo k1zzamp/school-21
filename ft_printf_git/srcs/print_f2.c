@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 17:58:53 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 18:05:27 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 18:23:48 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	print_Lf_help3(double x, int len, char *str)
 		ft_putchar_g('.');
 }
 
-void	print_Lf_help2(x, len, str)
+void	print_Lf_help2(double x, int len, char *str)
 {
 	if (g_pf_flags.flag_zero && g_pf_flags.width > len)
 		print_Lf_help3(x, len, str);

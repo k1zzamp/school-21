@@ -6,7 +6,7 @@
 /*   By: stross <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/22 17:32:51 by stross            #+#    #+#             */
-/*   Updated: 2019/11/22 17:33:09 by stross           ###   ########.fr       */
+/*   Updated: 2019/11/22 19:06:21 by stross           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	print_x_l_help2(long num, int len, char *str)
 	}
 }
 
-void	print_x_l_help4(long num, char *str, int *z_flag)
+void	print_x_l_help4(long num, int *z_flag)
 {
 	if (g_pf_flags.flag_hash && num != 0 && !(*z_flag))
 		g_pf_flags.x == 1 ? ft_putstr_g(HEX) : ft_putstr_g(HEXU);
@@ -74,8 +74,8 @@ void	print_x_l_help3(long num, int len, char *str, int z_flag)
 		g_pf_flags.width -= 2;
 	while (g_pf_flags.width > len && g_pf_flags.width > g_pf_flags.precision)
 	{
-		if (g_pf_flags.flag_zero == 1 && ! g_pf_flags.dot)
-			print_x_l_help4(num, &z_flag)
+		if (g_pf_flags.flag_zero == 1 && !g_pf_flags.dot)
+			print_x_l_help4(num, &z_flag);
 		else
 			ft_putchar_g(' ');
 		g_pf_flags.width--;
