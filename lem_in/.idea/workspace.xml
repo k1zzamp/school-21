@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="lem_in" targetName="lem_in" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a7f14049-9f35-496e-8eb4-e43b3e721437" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1VNPTrBUL0I6IJRzZpTtuvnfnfu" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="lem_in" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&lt; test" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lem_in" TARGET_NAME="lem_in" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lem_in" RUN_TARGET_NAME="lem_in">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7f14049-9f35-496e-8eb4-e43b3e721437" name="Default Changelist" comment="" />
+      <created>1577090591517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1577090591517</updated>
+      <workItem from="1577090604409" duration="651000" />
+      <workItem from="1577099025450" duration="13536000" />
+      <workItem from="1577182701493" duration="399000" />
+      <workItem from="1577183132022" duration="12147000" />
+      <workItem from="1577205486800" duration="5441000" />
+      <workItem from="1577269799116" duration="192000" />
+      <workItem from="1577270260333" duration="7371000" />
+      <workItem from="1577281888498" duration="7323000" />
+      <workItem from="1577355934654" duration="3852000" />
+      <workItem from="1577367222244" duration="4349000" />
+      <workItem from="1577441581741" duration="1690000" />
+      <workItem from="1577451613640" duration="808000" />
+      <workItem from="1577464813731" duration="381000" />
+      <workItem from="1577530420021" duration="15284000" />
+      <workItem from="1577614549555" duration="7344000" />
+      <workItem from="1578220802313" duration="10971000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="905" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577209933291">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="905" y="354" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1577209933291" />
+    <state x="1185" y="518" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577200879092">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1185" y="518" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1337@0.23.2560.1337" timestamp="1577200879092" />
+    <state width="750" height="352" key="GridCell.Tab.0.bottom" timestamp="1577557597985">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="750" height="352" key="GridCell.Tab.0.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1577557597985" />
+    <state width="750" height="352" key="GridCell.Tab.0.center" timestamp="1577557597985">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="750" height="352" key="GridCell.Tab.0.center/0.23.2560.1337@0.23.2560.1337" timestamp="1577557597985" />
+    <state width="750" height="352" key="GridCell.Tab.0.left" timestamp="1577557597985">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="750" height="352" key="GridCell.Tab.0.left/0.23.2560.1337@0.23.2560.1337" timestamp="1577557597985" />
+    <state width="750" height="352" key="GridCell.Tab.0.right" timestamp="1577557597985">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="750" height="352" key="GridCell.Tab.0.right/0.23.2560.1337@0.23.2560.1337" timestamp="1577557597985" />
+    <state width="750" height="352" key="GridCell.Tab.1.bottom" timestamp="1577557597986">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="750" height="352" key="GridCell.Tab.1.bottom/0.23.2560.1337@0.23.2560.1337" timestamp="1577557597986" />
+    <state width="750" height="352" key="GridCell.Tab.1.center" timestamp="1577557597986">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="750" height="352" key="GridCell.Tab.1.center/0.23.2560.1337@0.23.2560.1337" timestamp="1577557597986" />
+    <state width="750" height="352" key="GridCell.Tab.1.left" timestamp="1577557597986">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="750" height="352" key="GridCell.Tab.1.left/0.23.2560.1337@0.23.2560.1337" timestamp="1577557597986" />
+    <state width="750" height="352" key="GridCell.Tab.1.right" timestamp="1577557597986">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state width="750" height="352" key="GridCell.Tab.1.right/0.23.2560.1337@0.23.2560.1337" timestamp="1577557597986" />
+    <state x="945" y="388" key="SettingsEditor" timestamp="1577286368648">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="945" y="388" key="SettingsEditor/0.23.2560.1337@0.23.2560.1337" timestamp="1577286368648" />
+    <state x="1072" y="524" key="com.intellij.ide.util.TipDialog" timestamp="1578220802831">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1072" y="524" key="com.intellij.ide.util.TipDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1578220802831" />
+    <state x="1209" y="604" width="707" height="293" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1577182927485">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1209" y="604" width="707" height="293" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.23.2560.1337@0.23.2560.1337" timestamp="1577182927485" />
+    <state x="1106" y="329" width="670" height="676" key="search.everywhere.popup" timestamp="1577552358541">
+      <screen x="0" y="23" width="2560" height="1337" />
+    </state>
+    <state x="1106" y="329" width="670" height="676" key="search.everywhere.popup/0.23.2560.1337@0.23.2560.1337" timestamp="1577552358541" />
+  </component>
+</project>

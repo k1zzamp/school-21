@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/stross/CLionProjects/lem_in/lem_in.h
+sys/types.h
+-
+sys/uio.h
+-
+fcntl.h
+-
+stdlib.h
+-
+unistd.h
+-
+stdbool.h
+-
+stdio.h
+-
+limits.h
+-
+
+/Users/stross/CLionProjects/lem_in/send_ants.c
+lem_in.h
+/Users/stross/CLionProjects/lem_in/lem_in.h
+
